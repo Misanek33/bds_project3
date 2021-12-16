@@ -1,2 +1,8 @@
+<<<<<<< HEAD
 # Project exclude paths
 /target/
+=======
+.idea/
+logs/
+target/
+>>>>>>> origin/master
