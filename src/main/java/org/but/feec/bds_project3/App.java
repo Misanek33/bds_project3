@@ -3,24 +3,36 @@ package org.but.feec.bds_project3;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
-import java.io.IOException;
-
 public class App extends Application {
-    @Override
-    public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("App.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 600, 600);
-        stage.setTitle("Project 3");
-        stage.setScene(scene);
-        stage.show();
-    }
+
+    private FXMLLoader loader;
+    private VBox mainStage;
 
     public static void main(String[] args) {
-        Application.launch();
+        launch(args);
+    }
+
+    @Override
+    public void start(Stage primaryStage) {
+        try {
+            loader = new FXMLLoader(getClass().getResource("App.fxml"));
+            mainStage = loader.load();
+
+            primaryStage.setTitle("Project 3");
+            Scene scene = new Scene(mainStage);
+
+            primaryStage.setScene(scene);
+            primaryStage.show();
+        } catch (Exception ex) {
+            // handle sxception
+        }
     }
 
 }
+
 
 

@@ -1,5 +1,6 @@
 package org.but.feec.bds_project3.config;
 
+
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
 import org.slf4j.Logger;
@@ -12,7 +13,6 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.Properties;
 
-
 public class DataSourceConfig {
 
     private static final Logger logger = LoggerFactory.getLogger(DataSourceConfig.class);
@@ -23,29 +23,30 @@ public class DataSourceConfig {
     private static final String APPLICATION_PROPERTIES = "application.properties";
 
     static {
-        try (InputStream resourceAsStream = DataSourceConfig.class.getClassLoader().getResourceAsStream(APPLICATION_PROPERTIES)) {
+        try (InputStream resourceStream = DataSourceConfig.class.getClassLoader().getResourceAsStream(APPLICATION_PROPERTIES)) {
             Properties properties = new Properties();
 
-            properties.load(resourceAsStream);
+            properties.load(resourceStream);
 
             config.setJdbcUrl(properties.getProperty("datasource.url"));
             config.setUsername(properties.getProperty("datasource.username"));
             config.setPassword(properties.getProperty("datasource.password"));
             ds = new HikariDataSource(config);
         } catch (IOException | NullPointerException | IllegalArgumentException e) {
-            logger.error("Configuration error");
+            logger.error("Configuration of the datasource was not successful.", e);
         } catch (Exception e) {
-            logger.error("Could not connect to database");
+            logger.error("Could not connect to the database.", e);
         }
     }
 
-    private DataSourceConfig() {}
+    private DataSourceConfig() {
+    }
 
-    public static DataSource getDataSource() {return ds; }
+    public static DataSource getDataSource() {
+        return ds;
+    }
 
     public static Connection getConnection() throws SQLException {
         return ds.getConnection();
     }
-
-
 }

@@ -1,4 +1,4 @@
-package org.but.feec.bds_project3;
+package org.but.feec.bds_project3.controller;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -18,7 +18,6 @@ import java.util.List;
 
 public class AppController {
     private static final Logger logger = LoggerFactory.getLogger(AppController.class);
-
     @FXML
     private TableView<PersonBasicView> personTableView;
     @FXML
@@ -28,7 +27,7 @@ public class AppController {
     @FXML
     private TableColumn<PersonBasicView, String> columnSurname;
     @FXML
-    private Button refreshButton;
+    private Button btnRefresh;
 
     private PersonRepository personRepository;
     private PersonService personService;
