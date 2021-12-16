@@ -61,7 +61,7 @@ public class AppController {
     }
 
     @FXML
-    protected void onRefreshButtonClick(ActionEvent event) {
+    public void onRefreshButtonClick(ActionEvent event) {
         ObservableList<PersonBasicView> observablePersonList = initializePerson();
         personTableView.setItems(observablePersonList);
         personTableView.refresh();
