@@ -5,14 +5,16 @@ import javafx.beans.property.SimpleLongProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
-public class PersonBasicView {
+public class PersonDetailView {
 
     private LongProperty id = new SimpleLongProperty();
-    private StringProperty city = new SimpleStringProperty();
     private StringProperty email = new SimpleStringProperty();
     private StringProperty givenName = new SimpleStringProperty();
     private StringProperty familyName = new SimpleStringProperty();
     private StringProperty nickname = new SimpleStringProperty();
+    private StringProperty city = new SimpleStringProperty();
+    private StringProperty street = new SimpleStringProperty();
+    private StringProperty houseNumber = new SimpleStringProperty();
 
     public Long getId() {
         return idProperty().get();
@@ -20,14 +22,6 @@ public class PersonBasicView {
 
     public void setId(Long id) {
         this.idProperty().setValue(id);
-    }
-
-    public String getCity() {
-        return cityProperty().get();
-    }
-
-    public void setCity(String city) {
-        this.cityProperty().setValue(city);
     }
 
     public String getEmail() {
@@ -62,12 +56,32 @@ public class PersonBasicView {
         this.nicknameProperty().set(nickname);
     }
 
-    public LongProperty idProperty() {
-        return id;
+    public String getCity() {
+        return cityProperty().get();
     }
 
-    public StringProperty cityProperty() {
-        return city;
+    public void setCity(String city) {
+        this.cityProperty().setValue(city);
+    }
+
+    public String gethouseNumber() {
+        return houseNumberProperty().get();
+    }
+
+    public void sethouseNumber(String houseNumber) {
+        this.houseNumberProperty().setValue(houseNumber);
+    }
+
+    public String getStreet() {
+        return streetProperty().get();
+    }
+
+    public void setStreet(String street) {
+        this.streetProperty().setValue(street);
+    }
+
+    public LongProperty idProperty() {
+        return id;
     }
 
     public StringProperty emailProperty() {
@@ -86,5 +100,16 @@ public class PersonBasicView {
         return nickname;
     }
 
+    public StringProperty cityProperty() {
+        return city;
+    }
+
+    public StringProperty houseNumberProperty() {
+        return houseNumber;
+    }
+
+    public StringProperty streetProperty() {
+        return street;
+    }
 
 }
