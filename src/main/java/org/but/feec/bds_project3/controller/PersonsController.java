@@ -47,14 +47,13 @@ public class PersonsController {
     private TableColumn<PersonBasicView, String> personsNickname;
     @FXML
     private TableView<PersonBasicView> systemPersonsTableView;
-//    @FXML
-//    public MenuItem exitMenuItem;
+
 
     private PersonService personService;
     private PersonRepository personRepository;
 
-    public PersonsController() {
-    }
+   // public PersonsController() {
+   // }
 
     @FXML
     private void initialize() {
@@ -76,7 +75,7 @@ public class PersonsController {
         systemPersonsTableView.getSortOrder().add(personsId);
 
         initializeTableViewSelection();
-        loadIcons();
+
 
         logger.info("PersonsController initialized");
     }
@@ -91,7 +90,7 @@ public class PersonsController {
                 fxmlLoader.setLocation(App.class.getResource("fxml/PersonEdit.fxml"));
                 Stage stage = new Stage();
                 stage.setUserData(personView);
-                stage.setTitle("BDS JavaFX Edit Person");
+                stage.setTitle("JavaFX Edit Person");
 
                 PersonsEditController controller = new PersonsEditController();
                 controller.setStage(stage);
@@ -118,7 +117,7 @@ public class PersonsController {
                 PersonDetailView personDetailView = personService.getPersonDetailView(personId);
 
                 stage.setUserData(personDetailView);
-                stage.setTitle("BDS JavaFX Persons Detailed View");
+                stage.setTitle("JavaFX Persons Detailed View");
 
                 PersonsDetailViewController controller = new PersonsDetailViewController();
                 controller.setStage(stage);
@@ -146,12 +145,6 @@ public class PersonsController {
         return FXCollections.observableArrayList(persons);
     }
 
-    private void loadIcons() {
-        Image vutLogoImage = new Image(App.class.getResourceAsStream("logos/vut-logo-eng.png"));
-        ImageView vutLogo = new ImageView(vutLogoImage);
-        vutLogo.setFitWidth(150);
-        vutLogo.setFitHeight(50);
-    }
 
     public void handleExitMenuItem(ActionEvent event) {
         System.exit(0);

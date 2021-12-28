@@ -58,11 +58,12 @@ public class PersonsEditController {
 
         validation = new ValidationSupport();
         validation.registerValidator(idTextField, Validator.createEmptyValidator("The id must not be empty."));
-        idTextField.setEditable(false);
         validation.registerValidator(emailTextField, Validator.createEmptyValidator("The email must not be empty."));
         validation.registerValidator(givenNameTextField, Validator.createEmptyValidator("The first name must not be empty."));
         validation.registerValidator(familyNameTextField, Validator.createEmptyValidator("The last name must not be empty."));
         validation.registerValidator(nicknameTextField, Validator.createEmptyValidator("The nickname must not be empty."));
+        idTextField.setEditable(false);
+
 
         editPersonButton.disableProperty().bind(validation.invalidProperty());
 
@@ -107,6 +108,7 @@ public class PersonsEditController {
         personEditedConfirmationDialog();
     }
 
+
     private void personEditedConfirmationDialog() {
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle("Person Edited Confirmation");
@@ -123,7 +125,5 @@ public class PersonsEditController {
         idlestage.play();
         Optional<ButtonType> result = alert.showAndWait();
     }
-
-
 
 }
