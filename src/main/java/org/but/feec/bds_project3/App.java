@@ -6,6 +6,7 @@ import javafx.scene.Scene;
 
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import org.but.feec.bds_project3.exception.ExceptionHandler;
 
 public class App extends Application {
 
@@ -28,7 +29,7 @@ public class App extends Application {
             primaryStage.setScene(scene);
             primaryStage.show();
         } catch (Exception ex) {
-            // handle sxception
+            ExceptionHandler.handleException(ex);
         }
     }
 
