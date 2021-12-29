@@ -149,7 +149,7 @@ public class PersonRepository {
         personBasicView.setEmail(rs.getString("email"));
         personBasicView.setGivenName(rs.getString("given_name"));
         personBasicView.setFamilyName(rs.getString("family_name"));
-        personBasicView.setNickname(rs.getString("nickname"));
+        //personBasicView.setNickname(rs.getString("nickname"));
         personBasicView.setCity(rs.getString("city"));
         return personBasicView;
     }
