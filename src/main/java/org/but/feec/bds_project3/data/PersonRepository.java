@@ -55,9 +55,9 @@ public class PersonRepository {
     public List<PersonBasicView> getPersonsBasicView() {
         try (Connection connection = DataSourceConfig.getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(
-                     "SELECT id_person, email, given_name, family_name, nickname, city" +
-                             " FROM bds.person p" +
-                             " LEFT JOIN bds.address a ON p.id_address = a.id_address");
+                     "SELECT user_id, email, givenName, familyName, nickname, city" +
+                             " FROM public.user u" +
+                             " LEFT JOIN public.address a ON u.user_id = a.address_id");
              ResultSet resultSet = preparedStatement.executeQuery();) {
             List<PersonBasicView> personBasicViews = new ArrayList<>();
             while (resultSet.next()) {
