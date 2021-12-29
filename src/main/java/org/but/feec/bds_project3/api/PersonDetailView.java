@@ -9,9 +9,10 @@ public class PersonDetailView {
 
     private LongProperty id = new SimpleLongProperty();
     private StringProperty email = new SimpleStringProperty();
+    private StringProperty phone = new SimpleStringProperty();
     private StringProperty givenName = new SimpleStringProperty();
     private StringProperty familyName = new SimpleStringProperty();
-    private StringProperty nickname = new SimpleStringProperty();
+    //private StringProperty nickname = new SimpleStringProperty();
     private StringProperty city = new SimpleStringProperty();
     private StringProperty street = new SimpleStringProperty();
     private StringProperty houseNumber = new SimpleStringProperty();
@@ -32,6 +33,14 @@ public class PersonDetailView {
         this.emailProperty().setValue(email);
     }
 
+    public String getPhone() {
+        return phoneProperty().get();
+    }
+
+    public void setPhone(String phone) {
+        this.phoneProperty().setValue(phone);
+    }
+
     public String getGivenName() {
         return givenNameProperty().get();
     }
@@ -48,13 +57,13 @@ public class PersonDetailView {
         this.familyNameProperty().setValue(familyName);
     }
 
-    public String getNickname() {
-        return nicknameProperty().get();
-    }
+    //public String getNickname() {
+    //    return nicknameProperty().get();
+    //}
 
-    public void setNickname(String nickname) {
-        this.nicknameProperty().set(nickname);
-    }
+    //public void setNickname(String nickname) {
+    //    this.nicknameProperty().set(nickname);
+    //}
 
     public String getCity() {
         return cityProperty().get();
@@ -88,6 +97,10 @@ public class PersonDetailView {
         return email;
     }
 
+    public StringProperty phoneProperty() {
+        return phone;
+    }
+
     public StringProperty givenNameProperty() {
         return givenName;
     }
@@ -96,9 +109,9 @@ public class PersonDetailView {
         return familyName;
     }
 
-    public StringProperty nicknameProperty() {
-        return nickname;
-    }
+    //public StringProperty nicknameProperty() {
+    //    return nickname;
+    //}
 
     public StringProperty cityProperty() {
         return city;

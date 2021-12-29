@@ -39,6 +39,9 @@ public class PersonsDetailViewController {
     // used to reference the stage and to get passed data through it
     public Stage stage;
 
+    public PersonsDetailViewController() {
+    }
+
     public void setStage(Stage stage) {
         this.stage = stage;
     }
@@ -49,7 +52,7 @@ public class PersonsDetailViewController {
         emailTextField.setEditable(false);
         givenNameTextField.setEditable(false);
         familyNameTextField.setEditable(false);
-        nicknameTextField.setEditable(false);
+        //nicknameTextField.setEditable(false);
         cityTextField.setEditable(false);
         houseNumberTextField.setEditable(false);
         streetTextField.setEditable(false);
@@ -67,7 +70,7 @@ public class PersonsDetailViewController {
             emailTextField.setText(personBasicView.getEmail());
             givenNameTextField.setText(personBasicView.getGivenName());
             familyNameTextField.setText(personBasicView.getFamilyName());
-            nicknameTextField.setText(personBasicView.getNickname());
+            //nicknameTextField.setText(personBasicView.getNickname());
             cityTextField.setText(personBasicView.getCity());
             houseNumberTextField.setText(personBasicView.gethouseNumber());
             streetTextField.setText(personBasicView.getStreet());

@@ -42,6 +42,9 @@ public class PersonCreateController {
     @FXML
     private TextField newPersonPwd;
 
+    @FXML
+    private TextField newPersonStatus;
+
     private PersonService personService;
     private PersonRepository personRepository;
     private ValidationSupport validation;
@@ -57,6 +60,7 @@ public class PersonCreateController {
         validation.registerValidator(newPersonFamilyName, Validator.createEmptyValidator("The last name must not be empty."));
         validation.registerValidator(newPersonNickname, Validator.createEmptyValidator("The nickname must not be empty."));
         validation.registerValidator(newPersonPwd, Validator.createEmptyValidator("The password must not be empty."));
+        validation.registerValidator(newPersonStatus, Validator.createEmptyValidator("The status must not be empty."));
 
         newPersonCreatePerson.disableProperty().bind(validation.invalidProperty());
 
@@ -71,6 +75,7 @@ public class PersonCreateController {
         String lastName = newPersonFamilyName.getText();
         String nickname = newPersonNickname.getText();
         String password = newPersonPwd.getText();
+        String status = newPersonStatus.getText();
 
         PersonCreateView personCreateView = new PersonCreateView();
         personCreateView.setPwd(password.toCharArray());
@@ -78,6 +83,7 @@ public class PersonCreateController {
         personCreateView.setGivenName(firstName);
         personCreateView.setFamilyName(lastName);
         personCreateView.setNickname(nickname);
+        personCreateView.setStatus(status);
 
         personService.createPerson(personCreateView);
 

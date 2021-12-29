@@ -8,6 +8,7 @@ public class PersonCreateView {
     private String givenName;
     private String nickname;
     private String familyName;
+    private String status;
     private char[] pwd;
 
     public String getEmail() {
@@ -42,6 +43,14 @@ public class PersonCreateView {
         this.familyName = familyName;
     }
 
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
     public char[] getPwd() {
         return pwd;
     }
@@ -57,6 +66,7 @@ public class PersonCreateView {
                 ", givenName='" + givenName + '\'' +
                 ", nickname='" + nickname + '\'' +
                 ", familyName='" + familyName + '\'' +
+                ", status='" + status + '\'' +
                 ", pwd=" + Arrays.toString(pwd) +
                 '}';
     }

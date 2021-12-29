@@ -71,7 +71,7 @@ public class PersonRepository {
     }
 
     public void createPerson(PersonCreateView personCreateView) {
-        String insertPersonSQL = "INSERT INTO bds.user (email, given_name, nickname, password, family_name) VALUES (?,?,?,?,?)";
+        String insertPersonSQL = "INSERT INTO bds.user (email, given_name, nickname, password, family_name, status) VALUES (?,?,?,?,?,?)";
         try (Connection connection = DataSourceConfig.getConnection();
              // would be beneficial if I will return the created entity back
              PreparedStatement preparedStatement = connection.prepareStatement(insertPersonSQL, Statement.RETURN_GENERATED_KEYS)) {
@@ -81,6 +81,7 @@ public class PersonRepository {
             preparedStatement.setString(3, personCreateView.getNickname());
             preparedStatement.setString(4, String.valueOf(personCreateView.getPwd()));
             preparedStatement.setString(5, personCreateView.getFamilyName());
+            preparedStatement.setString(6, personCreateView.getStatus());
 
             int affectedRows = preparedStatement.executeUpdate();
 
@@ -160,7 +161,7 @@ public class PersonRepository {
         personDetailView.setEmail(rs.getString("email"));
         personDetailView.setGivenName(rs.getString("given_name"));
         personDetailView.setFamilyName(rs.getString("family_name"));
-        personDetailView.setNickname(rs.getString("nickname"));
+        //personDetailView.setNickname(rs.getString("nickname"));
         personDetailView.setCity(rs.getString("city"));
         personDetailView.sethouseNumber(rs.getString("house_number"));
         personDetailView.setStreet(rs.getString("street"));
