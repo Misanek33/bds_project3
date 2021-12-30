@@ -48,13 +48,14 @@ public class PersonEditView {
         this.familyName = familyName;
     }
 
+
     @Override
     public String toString() {
         return "PersonEditView{" +
                 "email='" + email + '\'' +
                 ", givenName='" + givenName + '\'' +
-                ", nickname='" + nickname + '\'' +
                 ", familyName='" + familyName + '\'' +
+                ", nickname='" + nickname + '\'' +
                 '}';
     }
 

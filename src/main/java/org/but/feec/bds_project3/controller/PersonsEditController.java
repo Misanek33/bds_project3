@@ -88,8 +88,7 @@ public class PersonsEditController {
     }
 
     @FXML
-    public void handleEditPersonButton(ActionEvent event) {
-        // can be written easier, its just for better explanation here on so many lines
+    public void handleEditButton(ActionEvent event) {
         Long id = Long.valueOf(idTextField.getText());
         String email = emailTextField.getText();
         String firstName = givenNameTextField.getText();
