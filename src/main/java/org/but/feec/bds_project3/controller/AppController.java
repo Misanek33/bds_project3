@@ -76,7 +76,7 @@ public class AppController {
 
     private void initializeValidations() {
         validation = new ValidationSupport();
-        validation.registerValidator(usernameTextField, Validator.createEmptyValidator("The username must not be empty."));
+        validation.registerValidator(usernameTextField, Validator.createEmptyValidator("The email must not be empty."));
         validation.registerValidator(passwordTextField, Validator.createEmptyValidator("The password must not be empty."));
         signInButton.disableProperty().bind(validation.invalidProperty());
     }
@@ -130,7 +130,7 @@ public class AppController {
         Alert alert = new Alert(Alert.AlertType.ERROR);
         alert.setTitle("Unauthenticated");
         alert.setHeaderText("The user is not authenticated");
-        alert.setContentText("Please provide a valid username and password");//ww  w . j  a  va2s  .  co  m
+        alert.setContentText("Please provide a valid email and password");//ww  w . j  a  va2s  .  co  m
 
         alert.showAndWait();
     }
@@ -138,7 +138,7 @@ public class AppController {
     private void authConfirmDialog() {
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle("Logging confirmation");
-        alert.setHeaderText("You were successfully logged in.");
+        alert.setHeaderText("You were successfully logged in!");
 
         Timeline idlestage = new Timeline(new KeyFrame(Duration.seconds(3), new EventHandler<ActionEvent>() {
 

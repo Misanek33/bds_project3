@@ -11,7 +11,7 @@ public class PersonDetailView {
     private StringProperty givenName = new SimpleStringProperty();
     private StringProperty familyName = new SimpleStringProperty();
     private StringProperty email = new SimpleStringProperty();
-    //private StringProperty primaryPhone = new SimpleStringProperty();
+    private StringProperty status = new SimpleStringProperty();
     private StringProperty city = new SimpleStringProperty();
     private StringProperty street = new SimpleStringProperty();
     private StringProperty houseNumber = new SimpleStringProperty();
@@ -48,13 +48,13 @@ public class PersonDetailView {
         this.emailProperty().setValue(email);
     }
 
-    //public String getPrimaryPhone() {
-    //    return primaryPhoneProperty().get();
-    //}
+    public String getStatus() {
+        return statusProperty().get();
+    }
 
-    //public void setPrimaryPhone(String primaryPhone) {
-    //    this.primaryPhoneProperty().setValue(primaryPhone);
-    //}
+    public void setStatus(String status) {
+        this.statusProperty().setValue(status);
+    }
 
     public String getCity() {
         return cityProperty().get();
@@ -104,11 +104,11 @@ public class PersonDetailView {
         return street;
     }
 
-    //public StringProperty primaryPhoneProperty() {
-    //    return primaryPhone;
-    //}
-
     public StringProperty emailProperty() {
         return email;
+    }
+
+    public StringProperty statusProperty() {
+        return status;
     }
 }

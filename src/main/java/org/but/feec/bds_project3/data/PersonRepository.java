@@ -31,7 +31,7 @@ public class PersonRepository {
     public PersonDetailView findPersonDetailedView(Long personId) {
         try (Connection connection = DataSourceConfig.getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(
-                     "SELECT u.user_id, u.given_name, u.family_name, u.email, a.street, a.city, a.house_number" +
+                     "SELECT u.user_id, u.given_name, u.family_name, u.email, u.status, a.street, a.city, a.house_number" +
                              " FROM bds.user u" +
                              " LEFT JOIN bds.address a ON u.user_id = a.address_id" +
                              " WHERE u.user_id = ?")) {
@@ -161,7 +161,7 @@ public class PersonRepository {
         personDetailView.setEmail(rs.getString("email"));
         personDetailView.setGivenName(rs.getString("given_name"));
         personDetailView.setFamilyName(rs.getString("family_name"));
-        //personDetailView.setPrimaryPhone(rs.getString("primary phone"));
+        personDetailView.setStatus(rs.getString("status"));
         personDetailView.setCity(rs.getString("city"));
         personDetailView.sethouseNumber(rs.getString("house_number"));
         personDetailView.setStreet(rs.getString("street"));

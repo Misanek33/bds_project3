@@ -25,8 +25,8 @@ public class PersonsDetailViewController {
     @FXML
     private TextField familyNameTextField;
 
-    //@FXML
-    //private TextField primaryPhoneTextField;
+    @FXML
+    private TextField statusTextField;
 
     @FXML
     private TextField cityTextField;
@@ -53,7 +53,7 @@ public class PersonsDetailViewController {
         emailTextField.setEditable(false);
         givenNameTextField.setEditable(false);
         familyNameTextField.setEditable(false);
-        //primaryPhoneTextField.setEditable(false);
+        statusTextField.setEditable(false);
         cityTextField.setEditable(false);
         houseNumberTextField.setEditable(false);
         streetTextField.setEditable(false);
@@ -72,7 +72,7 @@ public class PersonsDetailViewController {
             givenNameTextField.setText(personBasicView.getGivenName());
             familyNameTextField.setText(personBasicView.getFamilyName());
             emailTextField.setText(personBasicView.getEmail());
-            //primaryPhoneTextField.setText(personBasicView.getPrimaryPhone());
+            statusTextField.setText(personBasicView.getStatus());
             cityTextField.setText(personBasicView.getCity());
             houseNumberTextField.setText(personBasicView.gethouseNumber());
             streetTextField.setText(personBasicView.getStreet());
