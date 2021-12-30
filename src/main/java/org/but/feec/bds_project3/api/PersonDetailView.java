@@ -8,11 +8,10 @@ import javafx.beans.property.StringProperty;
 public class PersonDetailView {
 
     private LongProperty id = new SimpleLongProperty();
-    private StringProperty email = new SimpleStringProperty();
-    private StringProperty phone = new SimpleStringProperty();
     private StringProperty givenName = new SimpleStringProperty();
     private StringProperty familyName = new SimpleStringProperty();
-    //private StringProperty nickname = new SimpleStringProperty();
+    private StringProperty email = new SimpleStringProperty();
+    //private StringProperty primaryPhone = new SimpleStringProperty();
     private StringProperty city = new SimpleStringProperty();
     private StringProperty street = new SimpleStringProperty();
     private StringProperty houseNumber = new SimpleStringProperty();
@@ -23,22 +22,6 @@ public class PersonDetailView {
 
     public void setId(Long id) {
         this.idProperty().setValue(id);
-    }
-
-    public String getEmail() {
-        return emailProperty().get();
-    }
-
-    public void setEmail(String email) {
-        this.emailProperty().setValue(email);
-    }
-
-    public String getPhone() {
-        return phoneProperty().get();
-    }
-
-    public void setPhone(String phone) {
-        this.phoneProperty().setValue(phone);
     }
 
     public String getGivenName() {
@@ -57,12 +40,20 @@ public class PersonDetailView {
         this.familyNameProperty().setValue(familyName);
     }
 
-    //public String getNickname() {
-    //    return nicknameProperty().get();
+    public String getEmail() {
+        return emailProperty().get();
+    }
+
+    public void setEmail(String email) {
+        this.emailProperty().setValue(email);
+    }
+
+    //public String getPrimaryPhone() {
+    //    return primaryPhoneProperty().get();
     //}
 
-    //public void setNickname(String nickname) {
-    //    this.nicknameProperty().set(nickname);
+    //public void setPrimaryPhone(String primaryPhone) {
+    //    this.primaryPhoneProperty().setValue(primaryPhone);
     //}
 
     public String getCity() {
@@ -93,14 +84,6 @@ public class PersonDetailView {
         return id;
     }
 
-    public StringProperty emailProperty() {
-        return email;
-    }
-
-    public StringProperty phoneProperty() {
-        return phone;
-    }
-
     public StringProperty givenNameProperty() {
         return givenName;
     }
@@ -108,10 +91,6 @@ public class PersonDetailView {
     public StringProperty familyNameProperty() {
         return familyName;
     }
-
-    //public StringProperty nicknameProperty() {
-    //    return nickname;
-    //}
 
     public StringProperty cityProperty() {
         return city;
@@ -125,4 +104,11 @@ public class PersonDetailView {
         return street;
     }
 
+    //public StringProperty primaryPhoneProperty() {
+    //    return primaryPhone;
+    //}
+
+    public StringProperty emailProperty() {
+        return email;
+    }
 }

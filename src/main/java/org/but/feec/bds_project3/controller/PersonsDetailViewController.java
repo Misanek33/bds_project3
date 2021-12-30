@@ -1,5 +1,6 @@
 package org.but.feec.bds_project3.controller;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
@@ -24,8 +25,8 @@ public class PersonsDetailViewController {
     @FXML
     private TextField familyNameTextField;
 
-    @FXML
-    private TextField nicknameTextField;
+    //@FXML
+    //private TextField primaryPhoneTextField;
 
     @FXML
     private TextField cityTextField;
@@ -52,7 +53,7 @@ public class PersonsDetailViewController {
         emailTextField.setEditable(false);
         givenNameTextField.setEditable(false);
         familyNameTextField.setEditable(false);
-        //nicknameTextField.setEditable(false);
+        //primaryPhoneTextField.setEditable(false);
         cityTextField.setEditable(false);
         houseNumberTextField.setEditable(false);
         streetTextField.setEditable(false);
@@ -70,7 +71,8 @@ public class PersonsDetailViewController {
             emailTextField.setText(personBasicView.getEmail());
             givenNameTextField.setText(personBasicView.getGivenName());
             familyNameTextField.setText(personBasicView.getFamilyName());
-            //nicknameTextField.setText(personBasicView.getNickname());
+            emailTextField.setText(personBasicView.getEmail());
+            //primaryPhoneTextField.setText(personBasicView.getPrimaryPhone());
             cityTextField.setText(personBasicView.getCity());
             houseNumberTextField.setText(personBasicView.gethouseNumber());
             streetTextField.setText(personBasicView.getStreet());

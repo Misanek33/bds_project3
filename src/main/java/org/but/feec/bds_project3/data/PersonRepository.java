@@ -31,10 +31,9 @@ public class PersonRepository {
     public PersonDetailView findPersonDetailedView(Long personId) {
         try (Connection connection = DataSourceConfig.getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(
-                     "SELECT given_name, family_name, faculty_email, primary_phone, street, city, number as house_number" +
+                     "SELECT u.user_id, u.given_name, u.family_name, u.email, a.street, a.city, a.house_number" +
                              " FROM bds.user u" +
-                             " INNER JOIN bds.contact c ON u.user_id = c.contact_id" +
-                             " FULL OUTER JOIN bds.address a ON u.user_id = a.address_id" +
+                             " LEFT JOIN bds.address a ON u.user_id = a.address_id" +
                              " WHERE u.user_id = ?")) {
             preparedStatement.setLong(1, personId);
             try (ResultSet resultSet = preparedStatement.executeQuery()) {
@@ -56,7 +55,7 @@ public class PersonRepository {
     public List<PersonBasicView> getPersonsBasicView() {
         try (Connection connection = DataSourceConfig.getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(
-                     "SELECT user_id, given_name, family_name,email, city" +
+                     "SELECT user_id, given_name, family_name,email, city, nickname" +
                              " FROM bds.user u" +
                              " LEFT JOIN bds.address a ON u.user_id = a.address_id");
              ResultSet resultSet = preparedStatement.executeQuery();) {
@@ -70,6 +69,7 @@ public class PersonRepository {
         }
     }
 
+    //TODO Fungujeee!!!
     public void createPerson(PersonCreateView personCreateView) {
         String insertPersonSQL = "INSERT INTO bds.user (email, given_name, nickname, password, family_name, status) VALUES (?,?,?,?,?,?)";
         try (Connection connection = DataSourceConfig.getConnection();
@@ -150,7 +150,7 @@ public class PersonRepository {
         personBasicView.setEmail(rs.getString("email"));
         personBasicView.setGivenName(rs.getString("given_name"));
         personBasicView.setFamilyName(rs.getString("family_name"));
-        //personBasicView.setNickname(rs.getString("nickname"));
+        personBasicView.setNickname(rs.getString("nickname"));
         personBasicView.setCity(rs.getString("city"));
         return personBasicView;
     }
@@ -161,7 +161,7 @@ public class PersonRepository {
         personDetailView.setEmail(rs.getString("email"));
         personDetailView.setGivenName(rs.getString("given_name"));
         personDetailView.setFamilyName(rs.getString("family_name"));
-        //personDetailView.setNickname(rs.getString("nickname"));
+        //personDetailView.setPrimaryPhone(rs.getString("primary phone"));
         personDetailView.setCity(rs.getString("city"));
         personDetailView.sethouseNumber(rs.getString("house_number"));
         personDetailView.setStreet(rs.getString("street"));
