@@ -1,6 +1,5 @@
 package org.but.feec.bds_project3.controller;
 
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
@@ -25,17 +24,14 @@ public class PersonsDetailViewController {
     @FXML
     private TextField familyNameTextField;
 
-    //@FXML
-    //private TextField primaryPhoneTextField;
+    @FXML
+    private TextField statusTextField;
 
     @FXML
-    private TextField cityTextField;
+    private TextField courseNameTextField;
 
     @FXML
-    private TextField houseNumberTextField;
-
-    @FXML
-    private TextField streetTextField;
+    private TextField courseLocationTextField;
 
     // used to reference the stage and to get passed data through it
     public Stage stage;
@@ -53,10 +49,9 @@ public class PersonsDetailViewController {
         emailTextField.setEditable(false);
         givenNameTextField.setEditable(false);
         familyNameTextField.setEditable(false);
-        //primaryPhoneTextField.setEditable(false);
-        cityTextField.setEditable(false);
-        houseNumberTextField.setEditable(false);
-        streetTextField.setEditable(false);
+        statusTextField.setEditable(false);
+        courseNameTextField.setEditable(false);
+        courseLocationTextField.setEditable(false);
 
         loadPersonsData();
 
@@ -72,10 +67,9 @@ public class PersonsDetailViewController {
             givenNameTextField.setText(personBasicView.getGivenName());
             familyNameTextField.setText(personBasicView.getFamilyName());
             emailTextField.setText(personBasicView.getEmail());
-            //primaryPhoneTextField.setText(personBasicView.getPrimaryPhone());
-            cityTextField.setText(personBasicView.getCity());
-            houseNumberTextField.setText(personBasicView.gethouseNumber());
-            streetTextField.setText(personBasicView.getStreet());
+            statusTextField.setText(personBasicView.getStatus());
+            courseNameTextField.setText(personBasicView.getCourseName());
+            courseLocationTextField.setText(personBasicView.getCourseLocation());
         }
     }
 

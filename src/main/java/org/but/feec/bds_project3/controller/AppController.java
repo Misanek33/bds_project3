@@ -76,7 +76,7 @@ public class AppController {
 
     private void initializeValidations() {
         validation = new ValidationSupport();
-        validation.registerValidator(usernameTextField, Validator.createEmptyValidator("The username must not be empty."));
+        validation.registerValidator(usernameTextField, Validator.createEmptyValidator("The email must not be empty."));
         validation.registerValidator(passwordTextField, Validator.createEmptyValidator("The password must not be empty."));
         signInButton.disableProperty().bind(validation.invalidProperty());
     }

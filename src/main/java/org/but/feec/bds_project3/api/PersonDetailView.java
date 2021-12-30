@@ -11,10 +11,11 @@ public class PersonDetailView {
     private StringProperty givenName = new SimpleStringProperty();
     private StringProperty familyName = new SimpleStringProperty();
     private StringProperty email = new SimpleStringProperty();
-    //private StringProperty primaryPhone = new SimpleStringProperty();
-    private StringProperty city = new SimpleStringProperty();
-    private StringProperty street = new SimpleStringProperty();
-    private StringProperty houseNumber = new SimpleStringProperty();
+    private StringProperty courseName = new SimpleStringProperty();
+    //private StringProperty courseName = new SimpleStringProperty();
+    private StringProperty courseLocation = new SimpleStringProperty();
+    private StringProperty status = new SimpleStringProperty();
+
 
     public Long getId() {
         return idProperty().get();
@@ -48,36 +49,29 @@ public class PersonDetailView {
         this.emailProperty().setValue(email);
     }
 
-    //public String getPrimaryPhone() {
-    //    return primaryPhoneProperty().get();
-    //}
 
-    //public void setPrimaryPhone(String primaryPhone) {
-    //    this.primaryPhoneProperty().setValue(primaryPhone);
-    //}
-
-    public String getCity() {
-        return cityProperty().get();
+    public String getStatus() {
+        return statusProperty().get();
     }
 
-    public void setCity(String city) {
-        this.cityProperty().setValue(city);
+    public void setStatus(String status) {
+        this.statusProperty().setValue(status);
     }
 
-    public String gethouseNumber() {
-        return houseNumberProperty().get();
+    public String getCourseName() {
+        return courseNameProperty();
     }
 
-    public void sethouseNumber(String houseNumber) {
-        this.houseNumberProperty().setValue(houseNumber);
+    public void setCourseName(String courseName) {
+        this.courseNameProperty().setValue(courseName);
     }
 
-    public String getStreet() {
-        return streetProperty().get();
+    public String getCourseLocation() {
+        return courseLocationProperty().get();
     }
 
-    public void setStreet(String street) {
-        this.streetProperty().setValue(street);
+    public void setCourseLocation(String courseLocation) {
+        this.courseLocationProperty().setValue(courseLocation);
     }
 
     public LongProperty idProperty() {
@@ -92,21 +86,17 @@ public class PersonDetailView {
         return familyName;
     }
 
-    public StringProperty cityProperty() {
-        return city;
+    public StringProperty statusProperty() {
+        return status;
     }
 
-    public StringProperty houseNumberProperty() {
-        return houseNumber;
+    public StringProperty courseName() {
+        return courseName;
     }
 
-    public StringProperty streetProperty() {
-        return street;
+    public StringProperty courseLocation() {
+        return courseLocation;
     }
-
-    //public StringProperty primaryPhoneProperty() {
-    //    return primaryPhone;
-    //}
 
     public StringProperty emailProperty() {
         return email;

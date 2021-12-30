@@ -43,7 +43,7 @@
                         <Insets left="5.0" />
                     </padding>
                 </Label>
-                <Label text="primary phone" GridPane.rowIndex="4">
+                <Label text="status" GridPane.rowIndex="4">
                     <padding>
                         <Insets left="5.0" />
                     </padding>
@@ -52,7 +52,7 @@
                 <TextField fx:id="emailTextField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                 <TextField fx:id="givenNameTextField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                 <TextField fx:id="familyNameTextField" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                <TextField fx:id="primaryPhoneTextField" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                <TextField fx:id="statusTextField" GridPane.columnIndex="1" GridPane.rowIndex="4" />
                 <Label text="city" GridPane.rowIndex="5">
                     <GridPane.margin>
                         <Insets />
@@ -61,19 +61,19 @@
                         <Insets left="5.0" />
                     </padding>
                 </Label>
-                <Label text="house number" GridPane.rowIndex="6">
+                <Label text="course name" GridPane.rowIndex="6">
                     <padding>
                         <Insets left="5.0" />
                     </padding>
                 </Label>
-                <Label text="street" GridPane.rowIndex="7">
+                <Label text="course location" GridPane.rowIndex="7">
                     <padding>
                         <Insets left="5.0" />
                     </padding>
                 </Label>
                 <TextField fx:id="cityTextField" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-                <TextField fx:id="houseNumberTextField" GridPane.columnIndex="1" GridPane.rowIndex="6" />
-                <TextField fx:id="streetTextField" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                <TextField fx:id="courseNameTextField" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                <TextField fx:id="courseLocationTextField" GridPane.columnIndex="1" GridPane.rowIndex="7" />
             </children>
         </GridPane>
     </children>
